@@ -1,3 +1,7 @@
+@font-face {
+    font-family: "General Sans";
+    src: url("Fonts/GeneralSans-Regular.otf");
+}
 *{
     margin: 0;
     border: 0;
