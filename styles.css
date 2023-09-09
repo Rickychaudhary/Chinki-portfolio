@@ -1,0 +1,373 @@
+*{
+    margin: 0;
+    border: 0;
+    font-family: "General Sans";
+    box-sizing: border-box;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+    scroll-behavior: smooth;
+}
+#main-container{
+    height: 100%;
+    width: 100%;
+    background-color: black;
+}
+.loader{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    background: rgb(194, 181, 183);
+    z-index: 9999;
+    text-align: center;
+    transition: all ease-in-out 2s;
+}
+#progress-status {
+    width: fit-content;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  #progress-bar::-moz-progress-bar{
+    background: #fff;
+  }
+  #progress-bar::-webkit-progress-bar
+{
+    background: transparent;
+}
+#progress-bar::-webkit-progress-value
+{
+    background: #fff;
+}
+   #progress-bar{
+    width: 110px;
+    height: 2px;
+    background-color: black;
+    border-radius: 15px;
+   }
+
+#cursor{
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 100ms;
+    height: 10px;
+    width: 10px;
+    position: relative;
+    z-index: 99999;
+    border-radius: 50%;
+    background-color: #fff;
+    mix-blend-mode: difference;
+}
+
+.bounding{
+    width: fit-content;
+    overflow: hidden;
+}
+
+.bounding .boundingelem{
+    transform: translateY(100%);
+}
+#main{
+    width: 100%;
+    background-color: black;
+}
+
+#hero{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    color: #fff;
+}
+#nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 35px 40px;
+    position: sticky;
+    top: 0;
+}
+
+#nav a{
+    text-decoration: none;
+    font-size: 22px;
+   color: #fff;
+}
+
+#nav .menu{
+    border: none;
+    border-radius: 100px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px; 
+    background-color: transparent;
+}
+
+#nav .navitems{
+    position: absolute;
+    margin-left: 70vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3.5vw;
+    opacity: 0;
+}
+
+#heading{
+    margin-top: 5rem;
+    
+}
+
+#heading h1{
+    margin-left: 50px;
+    line-height: 1;
+    opacity: .6;
+    font-family: General Sans;
+    font-size: 10vw;
+    text-transform: uppercase;
+}
+
+.chhottiheading #surname{
+    margin-left: 10vw;
+}
+
+.chhottiheading{
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.chhottiheading h5{
+    text-transform: uppercase;
+    font-size: .95rem;
+    text-align: right;
+}
+
+#available{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    margin-top: 90px;
+    padding-right: 50px;
+}
+#available h5{
+    text-transform: uppercase;
+    margin-top: .5vw;
+    text-align: right;
+    font-size: .95rem;
+}
+
+#herofooter{
+    padding: 0 2vw;
+    width: 100%;
+    position: absolute;
+    bottom: 3%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#herofooter a{
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: .95rem;
+}
+#iconset{
+    display: flex;
+    gap: 7px;
+}
+.circle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: #888;
+}
+
+#middle{
+    color: #fff;
+    padding-right: 10vw;
+    padding-left: 2vw;
+    padding-top: 150px;
+    background-color: black;
+    width: 100%;
+    height: auto;
+}
+
+.project{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 3.5vw 2vw;
+    padding-right: 0;
+    border-top: 1px solid #888;
+}
+
+.project h1{
+    text-transform: uppercase;
+    font-size: 4vw;
+    opacity: .6;
+}
+
+.lastproject{
+    border-bottom: 1px solid #888;
+}
+.project img{
+    opacity: 0;
+    pointer-events: none;
+    height: 140%;
+    position: absolute;
+    z-index: 999;
+    transform: translate(-50%, -50%);
+}
+#up-btn-div
+{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 2vw;
+}
+#up-btn{
+    color: #fff;
+    right: 0;
+}
+#about{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: 5vw;
+    padding: 10vw 10vw;
+    width: 100%;
+    background-color: black;
+    color: #fff;
+}
+@media (max-width: 744px) {
+    #about{
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+        gap: 5vw;
+        padding: 10vw 10vw;
+        width: 100%;
+        background-color: black;
+        color: #fff;
+    }
+}
+
+#about img{
+      width: 15rem;
+}
+
+#abouttext{
+    width: 25rem;
+}
+
+#abouttext h5{
+    text-transform: uppercase;
+    opacity: .6;
+    margin-bottom: 10px;
+    font-size: .95rem;
+}
+
+#abouttext p{
+    font-size: .95rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+#abouttext a{
+    padding: 12px 22px;
+    border: 1px solid #fff;
+    border-radius: 100px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+#bottom{
+    color: #fff;
+    padding-left: 3vw;
+    background-color: black;
+    padding: 20px 30px;
+    padding-bottom: 1vw;
+}
+
+#bottom h5{
+    opacity: .6;
+}
+
+#bottom h3{
+    text-transform: uppercase;
+    font-size: 16px;
+    margin-top: 10px;
+}
+#bottom h3:hover{
+    transition: all linear .3s;
+    text-decoration: underline;
+}
+
+#footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: black;
+    color: #fff;
+    padding: 25px 40px;
+}
+
+#footerleft{
+    display: flex;
+    gap: 3.5vw;
+    font-size: 19px;
+    font-weight: 500;
+
+}
+
+#footerright{
+    display: flex;
+    gap: 3.5vw;
+}
+@media (max-width: 560px) {
+    #footerright{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: .35rem;
+    }
+    #footerleft{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: .35rem;
+    }
+    
+}
+
+#footerright a{
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 500;
+}
+
