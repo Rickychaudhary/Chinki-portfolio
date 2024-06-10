@@ -15,8 +15,8 @@ html,body{
     scroll-behavior: smooth;
 }
 #main-container{
-    height: 100%;
-    width: 100%;
+    position: relative;
+    overflow: hidden;
     background-color: black;
 }
 .loader{
@@ -66,11 +66,25 @@ html,body{
     transition: all cubic-bezier(0.19, 1, 0.22, 1) 100ms;
     height: 10px;
     width: 10px;
-    position: relative;
+    position: absolute;
     z-index: 99999;
     border-radius: 50%;
     background-color: #fff;
     mix-blend-mode: difference;
+    overflow: hidden;
+}
+
+#cursorText {
+    margin: 0;
+    padding: 0;
+    font-size: 2px;
+    font-weight: 100;
+    font-family: "General Sans";
+    color: rgb(0 0 0/var(--tw-bg-opacity));   
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    transform: translate(-50%, -50%);
 }
 
 .bounding{
@@ -82,7 +96,8 @@ html,body{
     transform: translateY(100%);
 }
 #main{
-    width: 100%;
+    position: relative;
+    overflow: hidden;
     background-color: black;
 }
 
@@ -108,13 +123,14 @@ html,body{
    color: #fff;
 }
 
-#nav .menu{
+#nav #menu{
     border: none;
     border-radius: 100px;
     color: #fff;
     text-decoration: none;
     font-size: 18px; 
     background-color: transparent;
+    position: relative;
 }
 
 #nav .navitems{
@@ -125,7 +141,9 @@ html,body{
     justify-content: space-between;
     gap: 3.5vw;
     opacity: 0;
+    transform: translateY(-100%);
 }
+
 
 #heading{
     margin-top: 5rem;
@@ -157,7 +175,7 @@ html,body{
     font-size: .95rem;
     text-align: right;
 }
-
+  
 #available{
     display: flex;
     flex-direction: column;
@@ -187,7 +205,41 @@ html,body{
     text-decoration: none;
     text-transform: uppercase;
     font-size: .95rem;
+    position: relative;
+    overflow: hidden;
 }
+#herofooter a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    transition: width 0.3s ease;
+    transform-origin: bottom left; 
+}
+
+#herofooter a:hover::before {
+    width: 100%; 
+}
+
+#herofooter a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    transition: width 0.3s ease 0.3s; 
+    transform-origin: bottom right;
+}
+
+#herofooter a:not(:hover)::after {
+    width: 0; 
+}
+
 #iconset{
     display: flex;
     gap: 7px;
@@ -297,14 +349,45 @@ html,body{
     margin-bottom: 1.5rem;
 }
 
-#abouttext a{
+
+.btncss{
     padding: 12px 22px;
     border: 1px solid #fff;
     border-radius: 100px;
+    background-color: #000;
+    transition: all ease 0.4s;
+    position: relative;
+    font-size: 12px;
+    overflow: hidden;
+}
+
+.btncss::after{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+    left: 0;
+    bottom: -100%;
+    border-radius: 50%;
+    transition: all ease 0.4s;
+}
+.text{
     color: #fff;
     text-decoration: none;
-    font-size: 12px;
+    position: relative;
+    z-index: 9;
 }
+
+.btncss:hover .text{
+    color: #000;
+}
+
+.btncss:hover::after{
+    bottom: 0;
+    border-radius: 0;
+}
+
 
 #bottom{
     color: #fff;
@@ -322,11 +405,42 @@ html,body{
     text-transform: uppercase;
     font-size: 16px;
     margin-top: 10px;
+    position: relative;
+    overflow: hidden;
 }
-#bottom h3:hover{
-    transition: all linear .3s;
-    text-decoration: underline;
+
+.underlining-text::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    transition: width 0.3s ease;
+    transform-origin: bottom left; 
 }
+
+.underlining-text:hover::before {
+    width: 20%; 
+}
+
+.underlining-text::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    transition: width 0.3s ease 0.3s; 
+    transform-origin: bottom right;
+}
+
+.underlining-text:not(:hover)::after {
+    width: 0; 
+}
+
 
 #footer{
     display: flex;
@@ -374,4 +488,6 @@ html,body{
     font-size: 14px;
     font-weight: 500;
 }
+
+
 
